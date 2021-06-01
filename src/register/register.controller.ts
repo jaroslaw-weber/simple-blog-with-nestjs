@@ -20,7 +20,6 @@ export class RegisterController {
 		let user = new UserEntity();
 		user.password = encryptedPassword.hash;
 		user.username = body.username;
-		//console.log(user);
 		let added = await this.repository.addUser(user);
 		console.log(added);
 		let isSuccess = true;//todo

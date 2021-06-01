@@ -17,9 +17,7 @@ export class ArticleController {
 	@Get(":id")
 	async getArticle(@Body() body: Body, @Param() params): Promise<ArticleEntity> {
 		let id = params.id;
-		console.log("id: " + id)
 		let result = await this.repository.getArticle(id);
-		console.log(result);
 		return result;
 	}
 
@@ -27,7 +25,6 @@ export class ArticleController {
 	@Post()
 	async addArticle(@Body() body: AddArticleRequest): Promise<ArticleEntity> {
 		let article = new ArticleEntity();
-		console.log("body: " + JSON.stringify(body))
 
 		let session: SessionEntity = new SessionEntity();
 		article.author = "username"

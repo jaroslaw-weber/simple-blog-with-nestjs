@@ -6,6 +6,7 @@ import { ArticleEntity } from './article/article.entity';
 import { HomeModule } from './home/home.module';
 import { UserEntity } from './user/user.entity';
 import { SessionEntity } from './session/session.entity';
+import { RegisterModule } from './register/register.module';
 
 /** setup database */
 let databaseSettings = TypeOrmModule.forRoot({
@@ -20,7 +21,7 @@ let databaseSettings = TypeOrmModule.forRoot({
 });
 
 @Module({
-  imports: [databaseSettings, ArticleModule, HomeModule],
+  imports: [databaseSettings, ArticleModule, HomeModule, RegisterModule],
   controllers: [],
   providers: [],
 })
